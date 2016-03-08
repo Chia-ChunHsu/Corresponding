@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="BeforeLabel0">
+   <widget class="QTabWidget" name="BeforeTab">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -269,7 +269,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="BeforeLabel0">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -392,7 +392,7 @@
        <attribute name="title">
         <string>Tab 1</string>
        </attribute>
-       <widget class="QLabel" name="Ref_2">
+       <widget class="QLabel" name="After">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -582,7 +582,7 @@
      <x>0</x>
      <y>0</y>
      <width>1350</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -29,7 +29,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QTabWidget *BeforeLabel0;
+    QTabWidget *BeforeTab;
     QWidget *tab;
     QTabWidget *tabWidget;
     QWidget *tab_4;
@@ -51,7 +51,7 @@ public:
     QWidget *tab_7;
     QPushButton *LoadBeforeButton;
     QLabel *BeforeLabel3;
-    QLabel *label;
+    QLabel *BeforeLabel0;
     QLabel *BeforeLabel1;
     QLabel *BeforeLabel2;
     QPushButton *pushButton_5;
@@ -61,7 +61,7 @@ public:
     QWidget *tab_3;
     QTabWidget *tabWidget_3;
     QWidget *tab_8;
-    QLabel *Ref_2;
+    QLabel *After;
     QWidget *tab_9;
     QPushButton *LoadAfterButtom;
     QLabel *AfterLabel0;
@@ -85,9 +85,9 @@ public:
         MainWindow->resize(1350, 655);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        BeforeLabel0 = new QTabWidget(centralWidget);
-        BeforeLabel0->setObjectName(QStringLiteral("BeforeLabel0"));
-        BeforeLabel0->setGeometry(QRect(10, 10, 671, 561));
+        BeforeTab = new QTabWidget(centralWidget);
+        BeforeTab->setObjectName(QStringLiteral("BeforeTab"));
+        BeforeTab->setGeometry(QRect(10, 10, 671, 561));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget = new QTabWidget(tab);
@@ -134,7 +134,7 @@ public:
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(590, 210, 51, 191));
         tabWidget->addTab(tab_5, QString());
-        BeforeLabel0->addTab(tab, QString());
+        BeforeTab->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         tabWidget_2 = new QTabWidget(tab_2);
@@ -156,10 +156,10 @@ public:
         BeforeLabel3->setObjectName(QStringLiteral("BeforeLabel3"));
         BeforeLabel3->setGeometry(QRect(330, 210, 256, 192));
         BeforeLabel3->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
-        label = new QLabel(tab_7);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 10, 256, 192));
-        label->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        BeforeLabel0 = new QLabel(tab_7);
+        BeforeLabel0->setObjectName(QStringLiteral("BeforeLabel0"));
+        BeforeLabel0->setGeometry(QRect(10, 10, 256, 192));
+        BeforeLabel0->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         BeforeLabel1 = new QLabel(tab_7);
         BeforeLabel1->setObjectName(QStringLiteral("BeforeLabel1"));
         BeforeLabel1->setGeometry(QRect(330, 10, 256, 192));
@@ -181,7 +181,7 @@ public:
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(270, 10, 51, 191));
         tabWidget_2->addTab(tab_7, QString());
-        BeforeLabel0->addTab(tab_2, QString());
+        BeforeTab->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         tabWidget_3 = new QTabWidget(tab_3);
@@ -189,10 +189,10 @@ public:
         tabWidget_3->setGeometry(QRect(0, 0, 661, 521));
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
-        Ref_2 = new QLabel(tab_8);
-        Ref_2->setObjectName(QStringLiteral("Ref_2"));
-        Ref_2->setGeometry(QRect(10, 10, 640, 480));
-        Ref_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        After = new QLabel(tab_8);
+        After->setObjectName(QStringLiteral("After"));
+        After->setGeometry(QRect(10, 10, 640, 480));
+        After->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
         tabWidget_3->addTab(tab_8, QString());
         tab_9 = new QWidget();
         tab_9->setObjectName(QStringLiteral("tab_9"));
@@ -228,7 +228,7 @@ public:
         pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
         pushButton_12->setGeometry(QRect(270, 10, 51, 191));
         tabWidget_3->addTab(tab_9, QString());
-        BeforeLabel0->addTab(tab_3, QString());
+        BeforeTab->addTab(tab_3, QString());
         RGBLabel = new QLabel(centralWidget);
         RGBLabel->setObjectName(QStringLiteral("RGBLabel"));
         RGBLabel->setGeometry(QRect(690, 20, 640, 480));
@@ -239,7 +239,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1350, 22));
+        menuBar->setGeometry(QRect(0, 0, 1350, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -250,7 +250,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        BeforeLabel0->setCurrentIndex(2);
+        BeforeTab->setCurrentIndex(1);
         tabWidget->setCurrentIndex(1);
         tabWidget_2->setCurrentIndex(1);
         tabWidget_3->setCurrentIndex(1);
@@ -274,12 +274,12 @@ public:
         pushButton_3->setText(QApplication::translate("MainWindow", ">", 0));
         pushButton_4->setText(QApplication::translate("MainWindow", ">", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Tab 2", 0));
-        BeforeLabel0->setTabText(BeforeLabel0->indexOf(tab), QApplication::translate("MainWindow", "Reference", 0));
+        BeforeTab->setTabText(BeforeTab->indexOf(tab), QApplication::translate("MainWindow", "Reference", 0));
         Before->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_6), QApplication::translate("MainWindow", "Tab 1", 0));
         LoadBeforeButton->setText(QApplication::translate("MainWindow", "Load", 0));
         BeforeLabel3->setText(QApplication::translate("MainWindow", "TextLabel", 0));
-        label->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        BeforeLabel0->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         BeforeLabel1->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         BeforeLabel2->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         pushButton_5->setText(QApplication::translate("MainWindow", ">", 0));
@@ -287,8 +287,8 @@ public:
         pushButton_7->setText(QApplication::translate("MainWindow", ">", 0));
         pushButton_8->setText(QApplication::translate("MainWindow", ">", 0));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_7), QApplication::translate("MainWindow", "Tab 2", 0));
-        BeforeLabel0->setTabText(BeforeLabel0->indexOf(tab_2), QApplication::translate("MainWindow", "Before", 0));
-        Ref_2->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        BeforeTab->setTabText(BeforeTab->indexOf(tab_2), QApplication::translate("MainWindow", "Before", 0));
+        After->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         tabWidget_3->setTabText(tabWidget_3->indexOf(tab_8), QApplication::translate("MainWindow", "Tab 1", 0));
         LoadAfterButtom->setText(QApplication::translate("MainWindow", "Load", 0));
         AfterLabel0->setText(QApplication::translate("MainWindow", "TextLabel", 0));
@@ -300,7 +300,7 @@ public:
         pushButton_11->setText(QApplication::translate("MainWindow", ">", 0));
         pushButton_12->setText(QApplication::translate("MainWindow", ">", 0));
         tabWidget_3->setTabText(tabWidget_3->indexOf(tab_9), QApplication::translate("MainWindow", "Tab 2", 0));
-        BeforeLabel0->setTabText(BeforeLabel0->indexOf(tab_3), QApplication::translate("MainWindow", "After", 0));
+        BeforeTab->setTabText(BeforeTab->indexOf(tab_3), QApplication::translate("MainWindow", "After", 0));
         RGBLabel->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         LoadRGBButtom->setText(QApplication::translate("MainWindow", "Load", 0));
     } // retranslateUi
