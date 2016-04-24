@@ -15,13 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     stitch.cpp \
-    thread_stitch.cpp
+    thread_stitch.cpp \
+    dialog.cpp
 
 HEADERS  += mainwindow.h \
     stitch.h \
-    thread_stitch.h
+    thread_stitch.h \
+    dialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialog.ui
 INCLUDEPATH += $$quote(D:\opencv 2.4.9.1\include)\
                $$quote(D:\opencv 2.4.9.1\include\opencv2)
 

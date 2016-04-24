@@ -7,6 +7,8 @@
 #include <opencv.hpp>
 #include <QLabel>
 #include "thread_stitch.h"
+#include <dialog.h>
+
 namespace Ui {
 class MainWindow;
 }
@@ -20,28 +22,28 @@ public:
     ~MainWindow();
     void ShowOnLabel(cv::Mat mat, QLabel *k);
     void Stitch(int value);
+    void drawOnRGB(std::vector<cv::Point> p);
 
 private slots:
-    void on_LoadRefButton_clicked();
 
-    void on_LoadBeforeButton_clicked();
+
+    void on_LoadPic_clicked();
+
+    void on_LoadRGB_clicked();
+
+
+    void on_PointButtom_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    Dialog picdialog;
 
-    Thread_Stitch TS;
-    Thread_Stitch TS_Detect;
-    std::vector<cv::Mat> nonDilateMask;
+    cv::Mat rgb;
+    cv::Mat pic;
 
-    cv::Mat RefResult;
-    std::vector<cv::Point> CorPoint;
-
-    std::vector<cv::Mat> subref;
-    std::vector<cv::Mat> subWref;
-
-    std::vector<cv::Mat> subbefore;
-    std::vector<cv::Mat> subWbefore;
-
+    std::vector<cv::Point> p;
 };
 
 #endif // MAINWINDOW_H
