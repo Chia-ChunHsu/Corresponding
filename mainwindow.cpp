@@ -61,7 +61,10 @@ void MainWindow::on_LoadPic_clicked()
     {
         return;
     }
-    pic = cv::imread(fileName.toStdString().c_str(),CV_LOAD_IMAGE_COLOR);
+    pic = cv::imread(fileName.toStdString().c_str());  //,CV_LOAD_IMAGE_COLOR
+    qDebug()<<pic.channels();
+//    cv::cvtColor(pic,pic,CV_GRAY2BGR);
+//    qDebug()<<pic.channels();
     ShowOnLabel(pic, ui->PicLabel);
 
 }
@@ -74,7 +77,8 @@ void MainWindow::on_LoadRGB_clicked()
     {
         return;
     }
-    rgb = cv::imread(fileName.toStdString().c_str(),CV_LOAD_IMAGE_COLOR);
+    rgb = cv::imread(fileName.toStdString().c_str());
+    cv::resize(rgb,rgb,cv::Size(720,480),CV_INTER_LINEAR);
     ShowOnLabel(rgb, ui->RGBLabel);
 }
 
@@ -86,18 +90,9 @@ void MainWindow::on_PointButtom_clicked()
     {
         //std::vector<cv::Point> points;
         //picdialog.dpoints = points;
-        picdialog.picOpenPint(pic);
+        picdialog.picOpenPint(pic,rgb);
 
     }
     return;
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    qDebug()<<picdialog.dpoints.size();
-    if(picdialog.dpoints.size()!=0)
-    {
-        //p = points;
-        drawOnRGB(picdialog.dpoints);
-    }
-}

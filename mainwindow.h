@@ -5,6 +5,7 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <opencv.hpp>
+
 #include <QLabel>
 #include "thread_stitch.h"
 #include <dialog.h>
@@ -34,7 +35,6 @@ private slots:
 
     void on_PointButtom_clicked();
 
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

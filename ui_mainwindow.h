@@ -33,7 +33,6 @@ public:
     QPushButton *LoadPic;
     QPushButton *LoadRGB;
     QPushButton *PointButtom;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -62,13 +61,10 @@ public:
         PointButtom = new QPushButton(centralWidget);
         PointButtom->setObjectName(QStringLiteral("PointButtom"));
         PointButtom->setGeometry(QRect(10, 320, 321, 41));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(410, 330, 75, 23));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 671, 22));
+        menuBar->setGeometry(QRect(0, 0, 671, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -90,7 +86,6 @@ public:
         LoadPic->setText(QApplication::translate("MainWindow", "Load Caputre Picture", 0));
         LoadRGB->setText(QApplication::translate("MainWindow", "Load RGB", 0));
         PointButtom->setText(QApplication::translate("MainWindow", "Point", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
     } // retranslateUi
 
 };

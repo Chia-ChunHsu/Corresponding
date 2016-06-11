@@ -53,6 +53,9 @@ LIBS+= $$OPENCVLIB/opencv_core249.lib\
        $$OPENCVLIB/opencv_ocl249.lib\
        $$OPENCVLIB/opencv_stitching249.lib\
        $$OPENCVLIB/opencv_ml249.lib\
+       $$OPENCVLIB/opencv_nonfree249.lib\
+       $$OPENCVLIB/opencv_highgui249.lib\
+       $$OPENCVLIB/opencv_calib3d249.lib
 
 }
 
