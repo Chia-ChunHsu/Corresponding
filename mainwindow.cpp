@@ -55,12 +55,14 @@ void MainWindow::drawOnRGB(std::vector<cv::Point> p)
 void MainWindow::on_LoadPic_clicked()
 {
 
+
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open Pic Image"), "D:/Dropbox/", tr("Image Files (*.jpg)"));
 
     if(fileName.isEmpty())
     {
         return;
     }
+    ui->FileLabel->setText(fileName);
     pic = cv::imread(fileName.toStdString().c_str());  //,CV_LOAD_IMAGE_COLOR
     qDebug()<<pic.channels();
 //    cv::cvtColor(pic,pic,CV_GRAY2BGR);
@@ -77,6 +79,7 @@ void MainWindow::on_LoadRGB_clicked()
     {
         return;
     }
+    ui->FileLabelRGB->setText(fileName);
     rgb = cv::imread(fileName.toStdString().c_str());
     cv::resize(rgb,rgb,cv::Size(720,480),CV_INTER_LINEAR);
     ShowOnLabel(rgb, ui->RGBLabel);
@@ -88,8 +91,6 @@ void MainWindow::on_PointButtom_clicked()
 {
     if(!pic.empty())
     {
-        //std::vector<cv::Point> points;
-        //picdialog.dpoints = points;
         picdialog.picOpenPint(pic,rgb);
 
     }

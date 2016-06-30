@@ -11,6 +11,8 @@
 #include <opencv2/nonfree/nonfree.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
+#include <QFileDialog>
+
 namespace Ui {
 class Dialog;
 }
@@ -50,11 +52,14 @@ private slots:
 
     void on_HomoButton_clicked();
 
+    void on_SaveButton_clicked();
+
 private:
     Ui::Dialog *ui;
     void ShowOnLabel(cv::Mat mat, QLabel *k);
     void cut(int x,int y,double scale,double angle);
     cv::Mat temp;
+    cv::Mat Otemp;
     cv::Mat rtemp;
 
     std::vector<cv::Point2f> picPoint;
@@ -82,6 +87,8 @@ private:
     //srcTri,dstTri
     std::vector<cv::Point2f> srcTri;
     std::vector<cv::Point2f> dstTri;
+
+    cv::Mat test;
 };
 
 #endif // DIALOG_H

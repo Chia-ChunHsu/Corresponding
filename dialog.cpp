@@ -24,13 +24,13 @@ void Dialog::picOpenPint(cv::Mat mat, cv::Mat RGB)
     this->open();
     temp = cvCreateMat(480,640,CV_8UC3);
     temp = mat.clone();
+    Otemp = mat.clone();
     rtemp = RGB.clone();
     rrgb = RGB.clone();
     ShowOnLabel(temp,ui->pointLabel);
     ShowOnLabel(rtemp,ui->pointRGBLabel);
     picPoint.clear();
     rgbPoint.clear();
-
 
 }
 bool Dialog::eventFilter(QObject *obj, QEvent *event)
@@ -329,9 +329,19 @@ void Dialog::on_HomoButton_clicked()
 {
     cv::Mat H = cv::findHomography(rgbPoint,picPoint);
 
-    cv::Mat test;
-    test.create(rrgb.rows,rrgb.cols,rrgb.type());
-    cv::warpPerspective(rrgb,test,H,rrgb.size());
+
+    test.create(Otemp.rows,Otemp.cols,Otemp.type());
+    cv::warpPerspective(rrgb,test,H,Otemp.size());
     ShowOnLabel(test,ui->pointRGBLabel);
     //cv::imshow("test.jpg",test);
+}
+
+void Dialog::on_SaveButton_clicked()
+{
+    QString saveName = QFileDialog::getSaveFileName(this, tr("Save File"),
+                                 "D:/",
+                                 tr("Images (*.jpg)"));
+    cv::Mat t;
+    cv::cvtColor(test,t,CV_BGR2RGB);
+    cv::imwrite(saveName.toStdString(),t);
 }

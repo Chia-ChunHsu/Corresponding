@@ -33,6 +33,8 @@ public:
     QPushButton *LoadPic;
     QPushButton *LoadRGB;
     QPushButton *PointButtom;
+    QLabel *FileLabel;
+    QLabel *FileLabelRGB;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -41,7 +43,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(671, 420);
+        MainWindow->resize(679, 472);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         PicLabel = new QLabel(centralWidget);
@@ -60,11 +62,17 @@ public:
         LoadRGB->setGeometry(QRect(340, 260, 321, 51));
         PointButtom = new QPushButton(centralWidget);
         PointButtom->setObjectName(QStringLiteral("PointButtom"));
-        PointButtom->setGeometry(QRect(10, 320, 321, 41));
+        PointButtom->setGeometry(QRect(10, 320, 651, 41));
+        FileLabel = new QLabel(centralWidget);
+        FileLabel->setObjectName(QStringLiteral("FileLabel"));
+        FileLabel->setGeometry(QRect(10, 370, 651, 20));
+        FileLabelRGB = new QLabel(centralWidget);
+        FileLabelRGB->setObjectName(QStringLiteral("FileLabelRGB"));
+        FileLabelRGB->setGeometry(QRect(10, 400, 651, 16));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 671, 21));
+        menuBar->setGeometry(QRect(0, 0, 679, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -85,7 +93,9 @@ public:
         RGBLabel->setText(QApplication::translate("MainWindow", "TextLabel", 0));
         LoadPic->setText(QApplication::translate("MainWindow", "Load Caputre Picture", 0));
         LoadRGB->setText(QApplication::translate("MainWindow", "Load RGB", 0));
-        PointButtom->setText(QApplication::translate("MainWindow", "Point", 0));
+        PointButtom->setText(QApplication::translate("MainWindow", "Homography", 0));
+        FileLabel->setText(QApplication::translate("MainWindow", "TextLabel", 0));
+        FileLabelRGB->setText(QApplication::translate("MainWindow", "TextLabel", 0));
     } // retranslateUi
 
 };

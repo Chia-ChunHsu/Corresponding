@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
-    <height>420</height>
+    <width>679</width>
+    <height>472</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -77,12 +77,38 @@
      <rect>
       <x>10</x>
       <y>320</y>
-      <width>321</width>
+      <width>651</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Point</string>
+     <string>Homography</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FileLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>651</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FileLabelRGB">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>651</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>
@@ -91,7 +117,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>671</width>
+     <width>679</width>
      <height>21</height>
     </rect>
    </property>
